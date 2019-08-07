@@ -14,7 +14,7 @@ class DealsTableViewCell: UITableViewCell {
     @IBOutlet weak var labelDeals: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
-            collectionView.contentInset = UIEdgeInsetsMake(0, 16, 0, 0)
+            collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
         }
     }
     override func awakeFromNib() {
@@ -86,7 +86,7 @@ extension DealsTableViewCell : UICollectionViewDelegate , UICollectionViewDataSo
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
             
-            return UIEdgeInsetsMake(0, 0, 0, 0)
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat{

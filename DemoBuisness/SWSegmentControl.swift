@@ -161,7 +161,7 @@ open class SWSegmentedControl: UIControl {
             let button = UIButton(type: .custom)
             self.configureButton(button)
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.setTitle(self.titleForSegmentAtIndex(index), for: UIControlState())
+            button.setTitle(self.titleForSegmentAtIndex(index), for: UIControl.State())
             button.addTarget(self, action: #selector(SWSegmentedControl.didTapButton(_:)), for: .touchUpInside)
             
             buttons.append(button)
@@ -241,12 +241,12 @@ open class SWSegmentedControl: UIControl {
     private func configureButton(_ button: UIButton) {
         button.titleLabel?.font = self.font
         button.setTitleColor(self.colorToUse(self.titleColor), for: .selected)
-        button.setTitleColor(self.unselectedTitleColor, for: UIControlState())
+        button.setTitleColor(self.unselectedTitleColor, for: UIControl.State())
         
     }
     
     // MARK: - Actions
-    func didTapButton(_ button: UIButton) {
+    @objc func didTapButton(_ button: UIButton) {
         guard let index = self.buttons?.index(of: button) else {
             return
         }

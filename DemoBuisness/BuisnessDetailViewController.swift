@@ -50,7 +50,7 @@ class BuisnessDetailViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tableView.contentInset = UIEdgeInsetsMake(headerView.frame.height, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsets(top: headerView.frame.height, left: 0, bottom: 0, right: 0)
         //constarintHeightHeaerImages.constant = UIScreen.main.bounds.width * 0.568
     }
     
@@ -60,13 +60,13 @@ class BuisnessDetailViewController: UIViewController, UITableViewDelegate, UITab
         
         headerImageView = UIImageView(frame: headerView.bounds)
         headerImageView?.image = UIImage(named: "header_bg")
-        headerImageView?.contentMode = UIViewContentMode.scaleAspectFill
+        headerImageView?.contentMode = UIView.ContentMode.scaleAspectFill
         headerView.insertSubview(headerImageView, belowSubview: headerLabel)
         
         // Header - Blurred Image
         headerBlurImageView = UIImageView(frame: headerView.bounds)
         headerBlurImageView?.image = UIImage(named: "header_bg")?.blurredImage(withRadius: 10, iterations: 20, tintColor: UIColor.clear)
-        headerBlurImageView?.contentMode = UIViewContentMode.scaleAspectFill
+        headerBlurImageView?.contentMode = UIView.ContentMode.scaleAspectFill
         headerBlurImageView?.alpha = 0.0
         headerView.insertSubview(headerBlurImageView, belowSubview: headerLabel)
         let btn = UIButton(frame: CGRect(x: 4, y: 20, width: 44, height: 44))
@@ -106,7 +106,7 @@ class BuisnessDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return  indexPath.section == 4 ? ScreenSize.SCREEN_WIDTH * 0.5628 + 32  : UITableViewAutomaticDimension
+        return  indexPath.section == 4 ? ScreenSize.SCREEN_WIDTH * 0.5628 + 32  : UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -233,7 +233,7 @@ class BuisnessDetailViewController: UIViewController, UITableViewDelegate, UITab
         
         
         // Set scroll view insets just underneath the segment control
-        tableView.scrollIndicatorInsets = UIEdgeInsetsMake(segmentedView.frame.maxY, 0, 0, 0)
+        tableView.scrollIndicatorInsets = UIEdgeInsets(top: segmentedView.frame.maxY, left: 0, bottom: 0, right: 0)
         
         
         
